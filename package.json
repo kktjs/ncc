@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "-----↓↓↓↓↓↓↓↓↓↓↓↓↓↓-----": "----------",
+    "build:bundle": "lerna exec \"npm run build:bundle\" --scope @template/bundle",
+    "build:bundle:node": "lerna exec \"npm run build\" --scope @template/bundle-node",
+    "-----↑↑↑↑↑↑↑↑↑↑↑↑↑↑-----": "----------",
+    "watch": "lerna exec \"tsbb watch --no-esm\" --scope @kkt/ncc",
+    "build": "lerna exec \"tsbb build --no-esm\" --scope @kkt/ncc",
+    "hoist": "lerna bootstrap --hoist",
+    "version": "lerna version --no-changelog --no-git-tag-version --no-push",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "updated": "lerna updated",
+    "remove": "lerna exec \"rm -rf node_modules build package-lock.json\"",
+    "clean": "lerna clean --yes && npm run remove"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,tsx,ts,less,md,json}": "prettier --write"
+  },
+  "devDependencies": {
+    "ajv": "^8.8.0",
+    "husky": "~7.0.4",
+    "lerna": "~4.0.0",
+    "lint-staged": "~12.3.5",
+    "prettier": "~2.5.1",
+    "tsbb": "~3.7.2"
+  }
+}
