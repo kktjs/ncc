@@ -3,7 +3,8 @@
   "version": "1.0.11",
   "description": "Simple CLI for compiling a Node.js module into a single file, together with all its dependencies, gcc-style.",
   "author": "Kenny Wong <wowohoo@qq.com> (https://github.com/jaywcjlove)",
-  "repository": "https://github.com/kktjs/kkt/tree/master/packages/ncc",
+  "homepage": "https://kktjs.github.io/ncc",
+  "repository": "https://github.com/kktjs/ncc",
   "license": "MIT",
   "bin": {
     "ncc": "./lib/index.js"
