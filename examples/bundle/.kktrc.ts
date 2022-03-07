@@ -1,6 +1,7 @@
+import { LoaderConfOptions, WebpackConfiguration } from 'kkt';
 import lessModules from '@kkt/less-modules';
 
-export default (conf, env, options) => {
+export default (conf: WebpackConfiguration, env: 'development' | 'production', options: LoaderConfOptions) => {
   conf = lessModules(conf, env, options);
   if (options.bundle) {
     conf.externals = {
@@ -18,6 +19,5 @@ export default (conf, env, options) => {
       },
     };
   }
-  // console.log('conf:', env, conf);
   return conf;
 };
