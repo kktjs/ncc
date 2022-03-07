@@ -2,18 +2,12 @@
 ===
 
 [![npm version](https://img.shields.io/npm/v/@kkt/ncc.svg)](https://www.npmjs.com/package/@kkt/ncc)
+[![Downloads](https://img.shields.io/npm/dm/@kkt/ncc.svg?style=flat)](https://www.npmjs.com/package/@kkt/ncc)
+[![CI](https://github.com/kktjs/ncc/actions/workflows/ci.yml/badge.svg)](https://github.com/kktjs/ncc/actions/workflows/ci.yml)
 
 Simple CLI for compiling a Node.js module into a single file, together with all its dependencies, gcc-style. A tool created based on [`kkt`](https://github.com/kktjs/kkt) & [`create-react-app`](https://github.com/facebook/create-react-app), [`@kkt/ncc`](https://www.npmjs.com/package/@kkt/ncc) similar to [@vercel/ncc](https://www.npmjs.com/package/@vercel/ncc)
 
 ## Usage
-
-## Quick Start
-
-```bash
-$ npx create-kkt my-app -e bundle-node
-cd my-app
-npm install
-```
 
 ### Installation
 
