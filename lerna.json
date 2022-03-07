@@ -1,5 +1,5 @@
 {
-  "version": "independent",
+  "version": "1.0.10",
   "packages": ["core", "examples/*"],
   "command": {
     "create": {
@@ -7,7 +7,7 @@
       "license": "MIT"
     },
     "version": {
-      "allowBranch": "master",
+      "allowBranch": "main",
       "exact": true,
       "message": "chore(release): %s"
     },
