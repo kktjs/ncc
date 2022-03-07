@@ -1,3 +1,6 @@
+import * as PATH from 'path';
+import { readFileSync } from 'fs';
+import fs from 'fs-extra';
 import { WebpackConfiguration, MiniCssExtractPlugin } from 'kkt';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
@@ -56,4 +59,15 @@ export function removeLoaders(conf: WebpackConfiguration) {
     return rule;
   });
   return conf;
+}
+
+export function hasTypeModule(path: string) {
+  while (path !== (path = PATH.resolve(path, '..'))) {
+    try {
+      return fs.readJSONSync(PATH.resolve(path, 'package.json')).type === 'module';
+    } catch (e) {
+      if (e.code === 'ENOENT') continue;
+      throw e;
+    }
+  }
 }

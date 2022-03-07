@@ -10,7 +10,7 @@ import { overridePaths } from 'kkt/lib/overrides/paths';
 import { sync as gzipSize } from 'gzip-size';
 import filesize from 'filesize';
 import './overrides';
-import { filterPlugins, removeLoaders } from './utils';
+import { filterPlugins, removeLoaders, hasTypeModule } from './utils';
 
 function help() {
   const { version } = require('../package.json');
@@ -181,6 +181,8 @@ process.on('exit', (code) => {
     data.cssFilePath = path.resolve(argvs.out, `${fileName}.css`);
     data.cssMinFilePath = path.resolve(argvs.out, `${fileName}.min.css`);
 
+    const isESM = inputFile.endsWith('.mjs') || (!inputFile.endsWith('.cjs') && hasTypeModule(inputFile));
+
     if (fs.existsSync(data.fileMinPath)) {
       data.fileMin = fs.readFileSync(data.fileMinPath).toString();
     }
@@ -226,7 +228,7 @@ process.on('exit', (code) => {
       conf.mode = scriptName === 'watch' ? 'development' : 'production';
       conf.output = {};
       if (argvs.external) conf.externals = argvs.external;
-      conf.output.libraryTarget = 'commonjs';
+      conf.output.libraryTarget = 'commonjs2';
       conf.output.path = outDir;
       conf.output.filename = data.filename;
       if (isWeb) {
@@ -234,6 +236,10 @@ process.on('exit', (code) => {
         if (argvs.library) {
           conf.output.library = argvs.library;
         }
+      } else if (isESM) {
+        conf.output.libraryTarget = 'module';
+        conf.experiments = conf.experiments ? conf.experiments : {};
+        conf.experiments.outputModule = true;
       }
       return conf;
     };
