@@ -1,6 +1,6 @@
 {
   "name": "@template/bundle",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "main": "dist/bundle.js",
   "module": "src/components/index.js",
   "description": "",
@@ -24,10 +24,10 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@kkt/less-modules": "~7.1.1",
+    "@kkt/ncc": "1.0.13",
     "@types/react": "~17.0.39",
     "@types/react-dom": "~17.0.13",
-    "@kkt/less-modules": "~7.1.1",
-    "@kkt/ncc": "1.0.12",
     "kkt": "~7.1.5"
   },
   "eslintConfig": {
