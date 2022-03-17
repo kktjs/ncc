@@ -166,7 +166,7 @@ process.on('exit', (code) => {
     const inputFile = path.resolve(argvs._[1] || 'src/index.ts');
 
     if (!fs.existsSync(inputFile)) {
-      throw Error(`KKT:NCC: Example "build <input-file> [opts]".`);
+      throw Error(`Could not find \x1b[31m"${inputFile}"\x1b[0m file. \n\n Example "build <input-file> [opts]".\n `);
     }
 
     const fileName = argvs.filename || path.basename(inputFile).replace(/.(js|jsx?|cjs|mjs|tsx?)$/, '');
