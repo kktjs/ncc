@@ -22,6 +22,7 @@ jobs:
     - name: Converts Markdown to HTML
       uses: jaywcjlove/markdown-to-html-cli@main
       with:
+        github-corners: https://github.com/kktjs/ncc
         output: build/index.html
 
     - name: Generate Contributors Images
