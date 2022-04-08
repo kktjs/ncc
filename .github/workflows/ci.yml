@@ -17,9 +17,10 @@ jobs:
     - run: npm run hoist
     - run: npm run build
 
-    - run: npm i markdown-to-html-cli -g
     - run: mkdir -p build
-    - run: markdown-to-html --output build/index.html
+
+    - name: Converts Markdown to HTML
+      uses: jaywcjlove/markdown-to-html-cli@main
 
     - name: Generate Contributors Images
       uses: jaywcjlove/github-action-contributors@main
@@ -44,7 +45,7 @@ jobs:
 
     - name: get tag version
       id: tag_version
-      uses: jaywcjlove/changelog-generator@v1.5.0
+      uses: jaywcjlove/changelog-generator@v1.5.3
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
@@ -55,7 +56,7 @@ jobs:
 
     - name: Generate Changelog
       id: changelog
-      uses: jaywcjlove/changelog-generator@v1.5.0
+      uses: jaywcjlove/changelog-generator@v1.5.3
       with:
         head-ref: ${{steps.create_tag.outputs.version}}
         filter-author: (小弟调调™|Renovate Bot)
