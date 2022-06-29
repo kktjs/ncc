@@ -8,7 +8,6 @@
     "-----↑↑↑↑↑↑↑↑↑↑↑↑↑↑-----": "----------",
     "watch": "lerna exec \"tsbb watch --no-esm\" --scope @kkt/ncc",
     "build": "lerna exec \"tsbb build --no-esm\" --scope @kkt/ncc",
-    "hoist": "lerna bootstrap --hoist",
     "version": "lerna version --no-changelog --no-git-tag-version --no-push",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "updated": "lerna updated",
@@ -21,6 +20,10 @@
   "lint-staged": {
     "*.{js,jsx,tsx,ts,less,md,json}": "prettier --write"
   },
+  "workspaces": [
+    "examples/**",
+    "core"
+  ],
   "devDependencies": {
     "ajv": "^8.8.0",
     "husky": "^8.0.1",

@@ -132,7 +132,6 @@ Runs the project in development mode.
 
 ```bash
 npm install
-npm run hoist
 npm run build
 
 npm run watch
