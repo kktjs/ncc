@@ -1,6 +1,6 @@
 {
   "name": "@template/bundle",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "main": "dist/bundle.js",
   "module": "src/components/index.js",
   "description": "",
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@kkt/less-modules": "^7.2.0",
-    "@kkt/ncc": "1.0.13",
+    "@kkt/ncc": "^1.0.14",
     "@types/react": "~17.0.39",
     "@types/react-dom": "~17.0.13",
     "kkt": "^7.2.0"
