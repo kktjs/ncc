@@ -9,9 +9,9 @@
     "start": "kkt start",
     "build": "kkt build",
     "build:bundle": "npm run bundle && npm run bundle:min",
-    "bundle": "ncc build src/components/button/index.jsx --target web --library Button",
-    "bundle:watch": "ncc watch src/components/button/index.jsx --target web --library Button",
-    "bundle:min": "ncc build src/components/button/index.jsx --target web --library Button -m"
+    "bundle": "ncc build src/components/button/index.tsx --target web --library Button",
+    "bundle:watch": "ncc watch src/components/button/index.tsx --target web --library Button",
+    "bundle:min": "ncc build src/components/button/index.tsx --target web --library Button -m"
   },
   "repository": {
     "type": "git",
