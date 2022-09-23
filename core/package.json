@@ -1,6 +1,6 @@
 {
   "name": "@kkt/ncc",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Simple CLI for compiling a Node.js module into a single file, together with all its dependencies, gcc-style.",
   "author": "Kenny Wong <wowohoo@qq.com> (https://github.com/jaywcjlove)",
   "homepage": "https://kktjs.github.io/ncc",
