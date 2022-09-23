@@ -1,5 +1,4 @@
 import * as PATH from 'path';
-import { readFileSync } from 'fs';
 import fs from 'fs-extra';
 import { WebpackConfiguration, MiniCssExtractPlugin } from 'kkt';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';

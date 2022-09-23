@@ -173,13 +173,16 @@ process.on('exit', (code) => {
     const outDir = argvs.out;
 
     data.filename = `${fileName}${argvs.minify ? '.min.js' : '.js'}`;
+    if (path.extname(fileName)) {
+      data.filename = fileName;
+    }
 
-    data.filePath = path.resolve(argvs.out, `${fileName}.js`);
-    data.fileMinPath = path.resolve(argvs.out, `${fileName}.min.js`);
-    data.mapMinFilePath = path.resolve(argvs.out, `${fileName}.js.map`);
-    data.mapFilePath = path.resolve(argvs.out, `${fileName}.min.js.map`);
-    data.cssFilePath = path.resolve(argvs.out, `${fileName}.css`);
-    data.cssMinFilePath = path.resolve(argvs.out, `${fileName}.min.css`);
+    data.filePath = path.resolve(argvs.out, `${fileName.replace(/.js$/, '')}.js`);
+    data.fileMinPath = path.resolve(argvs.out, `${fileName.replace(/.js$/, '')}.min.js`);
+    data.mapMinFilePath = path.resolve(argvs.out, `${fileName.replace(/.js$/, '')}.js.map`);
+    data.mapFilePath = path.resolve(argvs.out, `${fileName.replace(/.js$/, '')}.min.js.map`);
+    data.cssFilePath = path.resolve(argvs.out, `${fileName.replace(/.js$/, '')}.css`);
+    data.cssMinFilePath = path.resolve(argvs.out, `${fileName.replace(/.js$/, '')}.min.css`);
 
     const isESM = inputFile.endsWith('.mjs') || (!inputFile.endsWith('.cjs') && hasTypeModule(inputFile));
 
