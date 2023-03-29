@@ -9,8 +9,7 @@
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "lib",
-    "baseUrl": "./"
+    "outDir": "lib"
   },
   "include": ["src"]
 }

@@ -16,8 +16,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@hapi/hapi": "~20.2.1",
-    "@types/hapi__hapi": "~20.0.10"
+    "@hapi/hapi": "^21.3.1"
   },
   "devDependencies": {
     "@kkt/ncc": "^1.0.15"

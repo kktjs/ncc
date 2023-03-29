@@ -6,8 +6,8 @@
     "build:bundle": "lerna exec \"npm run build:bundle\" --scope @template/bundle",
     "build:bundle:node": "lerna exec \"npm run build\" --scope @template/bundle-node",
     "-----↑↑↑↑↑↑↑↑↑↑↑↑↑↑-----": "----------",
-    "watch": "lerna exec \"tsbb watch --no-esm\" --scope @kkt/ncc",
-    "build": "lerna exec \"tsbb build --no-esm\" --scope @kkt/ncc",
+    "watch": "lerna exec \"tsbb watch\" --scope @kkt/ncc",
+    "build": "lerna exec \"tsbb build\" --scope @kkt/ncc",
     "version": "lerna version --no-changelog --no-git-tag-version --no-push",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "updated": "lerna updated",
@@ -25,12 +25,12 @@
     "core"
   ],
   "devDependencies": {
-    "@kkt/less-modules": "^7.2.0",
+    "@kkt/less-modules": "^7.4.9",
     "ajv": "^8.8.0",
-    "husky": "^8.0.1",
-    "lerna": "^6.0.0",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "tsbb": "^3.7.6"
+    "husky": "^8.0.3",
+    "lerna": "^6.6.1",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.7",
+    "tsbb": "^4.0.5"
   }
 }
