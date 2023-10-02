@@ -28,7 +28,7 @@
     "@kkt/less-modules": "^7.4.9",
     "ajv": "^8.8.0",
     "husky": "^8.0.3",
-    "lerna": "^6.6.1",
+    "lerna": "^7.3.0",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.7",
     "tsbb": "^4.0.5"
