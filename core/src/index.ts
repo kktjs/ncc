@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 process.env.FAST_REFRESH = 'false';
+process.env.GENERATE_SOURCEMAP = 'false';
 
 import minimist from 'minimist';
 import path from 'path';
@@ -159,6 +160,7 @@ process.on('exit', (code) => {
       return;
     }
 
+    argvs.sourceMap = argvs.s = argvs.sourceMap || argvs.s || false;
     argvs.out = argvs.o = path.resolve(argvs.out || argvs.o || 'dist');
     argvs.minify = argvs.m = argvs.minify || argvs.m || false;
 

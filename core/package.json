@@ -25,6 +25,6 @@
   ],
   "dependencies": {
     "css-minimizer-webpack-plugin": "~3.4.1",
-    "kkt": "^7.4.9"
+    "kkt": "^7.5.3"
   }
 }

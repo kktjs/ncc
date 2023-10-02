@@ -47,6 +47,7 @@ export function removeLoaders(conf: WebpackConfiguration) {
     if (typeof rule === 'object' && rule.oneOf) {
       rule.oneOf = rule.oneOf
         .map((item) =>
+          item &&
           item.exclude &&
           /@babel(?:\/|\\{1,2})runtime/.toString() === item.exclude.toString() &&
           item.test.toString() === /\.(js|mjs)$/.toString()
