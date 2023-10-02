@@ -11,7 +11,7 @@ import { overridePaths } from 'kkt/lib/overrides/paths';
 import { sync as gzipSize } from 'gzip-size';
 import filesize from 'filesize';
 import './overrides';
-import { filterPlugins, removeLoaders, solveCjsLoaders, hasTypeModule } from './utils';
+import { filterPlugins, removeLoaders, hasTypeModule } from './utils';
 
 function help() {
   const { version } = require('../package.json');
@@ -212,7 +212,7 @@ process.on('exit', (code) => {
 
     const oPaths = { appBuild: outDir, appIndexJs: inputFile, appPublic: publicFolder };
     const isWeb = /^(web|browserslist)$/.test(argvs.target);
-    const target = isWeb ? argvs.target : argvs.target ? ['node14', argvs.target] : 'node14';
+    const target = isWeb ? argvs.target : argvs.target ? ['node16', argvs.target] : 'node16';
     fs.ensureDirSync(outDir);
     overridePaths(undefined, { ...oPaths });
     argvs.overridesWebpack = (conf, env, options) => {
@@ -221,7 +221,7 @@ process.on('exit', (code) => {
       if (isWeb) {
         conf = removeLoaders(conf);
       } else {
-        conf = solveCjsLoaders(conf);
+        conf.module.rules = [];
       }
       conf.entry = inputFile;
       if (argvs.sourceMap) {

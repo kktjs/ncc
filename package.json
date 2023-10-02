@@ -5,6 +5,7 @@
     "-----↓↓↓↓↓↓↓↓↓↓↓↓↓↓-----": "----------",
     "build:bundle": "lerna exec \"npm run build:bundle\" --scope @template/bundle",
     "build:bundle:node": "lerna exec \"npm run build\" --scope @template/bundle-node",
+    "build:bundle:action": "lerna exec \"npm run bundle\" --scope @template/github-actions",
     "-----↑↑↑↑↑↑↑↑↑↑↑↑↑↑-----": "----------",
     "watch": "lerna exec \"tsbb watch\" --scope @kkt/ncc",
     "build": "lerna exec \"tsbb build\" --scope @kkt/ncc",
