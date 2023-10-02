@@ -61,6 +61,29 @@ export function removeLoaders(conf: WebpackConfiguration) {
   return conf;
 }
 
+/** Solve cjs issue */
+export function solveCjsLoaders(conf: WebpackConfiguration) {
+  conf.module.rules = conf.module.rules.map((rule) => {
+    if (typeof rule === 'object' && rule.oneOf) {
+      rule.oneOf = rule.oneOf
+        .map((item) =>
+          item &&
+          item.exclude &&
+          /@babel(?:\/|\\{1,2})runtime/.toString() === item.exclude.toString() &&
+          item.test.toString() === /\.(js|mjs)$/.toString()
+            ? {
+                ...item,
+                test: /\.(js|cjs|mjs)$/,
+              }
+            : item,
+        )
+        .filter(Boolean);
+    }
+    return rule;
+  });
+  return conf;
+}
+
 export function hasTypeModule(path: string) {
   while (path !== (path = PATH.resolve(path, '..'))) {
     try {
