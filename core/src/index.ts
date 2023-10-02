@@ -11,7 +11,7 @@ import { overridePaths } from 'kkt/lib/overrides/paths';
 import { sync as gzipSize } from 'gzip-size';
 import filesize from 'filesize';
 import './overrides';
-import { filterPlugins, removeLoaders, hasTypeModule } from './utils';
+import { filterPlugins, modifyNodeJSLoaders, removeLoaders, hasTypeModule } from './utils';
 
 function help() {
   const { version } = require('../package.json');
@@ -221,7 +221,7 @@ process.on('exit', (code) => {
       if (isWeb) {
         conf = removeLoaders(conf);
       } else {
-        conf.module.rules = [];
+        conf = modifyNodeJSLoaders(conf);
       }
       conf.entry = inputFile;
       if (argvs.sourceMap) {
